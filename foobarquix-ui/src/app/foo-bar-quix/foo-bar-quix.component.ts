@@ -20,7 +20,11 @@ export class FooBarQuixComponent implements OnInit, OnDestroy {
   convertNumber(inputNumber: number): void {
     this.fooBarQuixService.convertNumber(inputNumber)
       .subscribe(value => {
-        console.log(value);
+        const numberConverted: NumberConverted = {
+          numberToConvert: inputNumber,
+          result: value
+        };
+        console.log(numberConverted);
       });
   }
 
