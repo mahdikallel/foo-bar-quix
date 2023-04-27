@@ -8,6 +8,8 @@ import {FooBarQuixService} from '../foo-bar-quix.service';
 })
 export class FooBarQuixComponent implements OnInit, OnDestroy {
 
+  convertedNumberList: NumberConverted[] = [];
+
   constructor(private fooBarQuixService: FooBarQuixService) {
   }
 
@@ -24,8 +26,8 @@ export class FooBarQuixComponent implements OnInit, OnDestroy {
           numberToConvert: inputNumber,
           result: value
         };
-        console.log(numberConverted);
-      });
+        this.convertedNumberList.push(numberConverted);
+      }, error => console.error(error));
   }
 
 }

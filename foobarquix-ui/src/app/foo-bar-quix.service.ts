@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {apiEndpoint} from './shared/enpoint';
+import {main} from '@angular/compiler-cli/src/main';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,13 @@ export class FooBarQuixService {
   }
 
   convertNumber(inputNumber: number): Observable<string> {
-    return this.httpClient.get<string>(`${apiEndpoint.fooBarQuix}/${inputNumber}`);
+    return this.httpClient.get<Result>(`${apiEndpoint.fooBarQuix}/${inputNumber}`)
+      .pipe(
+        map(value => value.result)
+      );
   }
+}
+
+export interface Result {
+  result: string;
 }
