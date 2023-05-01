@@ -11,7 +11,6 @@ class FooBarQuixService(private val divisibleConvertor: DivisibleConvertor) {
 
     fun convertNumber(inputNumber: Int): String {
         val numberToConvert = StringBuilder()
-        numberToConvert
                 .append(divisibleConvertor.execute(inputNumber))
                 .append(inputNumber.toString()
                         .chars()
