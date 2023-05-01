@@ -7,13 +7,14 @@ import java.util.stream.Collectors
 
 
 @Component
-class FooBarQuixService(private val findFooBarService: FindFooBarService) {
+class FooBarQuixService(private val divisibleConvertor: DivisibleConvertor) {
 
     fun convertNumber(inputNumber: Int): String {
         val numberToConvert = StringBuilder()
         numberToConvert
-                .append(findFooBarService.execute(inputNumber))
-                .append(inputNumber.toString().chars()
+                .append(divisibleConvertor.execute(inputNumber))
+                .append(inputNumber.toString()
+                        .chars()
                         .mapToObj { convert(it.toChar()) }
                         .collect(Collectors.joining()))
 

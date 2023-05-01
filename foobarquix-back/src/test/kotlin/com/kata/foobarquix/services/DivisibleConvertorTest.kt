@@ -3,9 +3,9 @@ package com.kata.foobarquix.services
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
-class FindFooBarServiceTest {
+class DivisibleConvertorTest {
 
-    val findFooBarService: FindFooBarService = FindFooBarService()
+    private val divisibleConvertor: DivisibleConvertor = DivisibleConvertor()
 
     @Test
     fun should_return_foo_when_number_is_divisible_by_3() {
@@ -13,7 +13,7 @@ class FindFooBarServiceTest {
         val numberToConvert = 21
 
         // when
-        val convertedNumber = findFooBarService.execute(numberToConvert)
+        val convertedNumber = divisibleConvertor.execute(numberToConvert)
 
         // then
         Assertions.assertEquals("Foo", convertedNumber.toString())
@@ -26,7 +26,7 @@ class FindFooBarServiceTest {
         val numberToConvert = 25
 
         // when
-        val convertedNumber = findFooBarService.execute(numberToConvert)
+        val convertedNumber = divisibleConvertor.execute(numberToConvert)
 
         // then
         Assertions.assertEquals("Bar", convertedNumber.toString())
@@ -38,7 +38,7 @@ class FindFooBarServiceTest {
         val numberToConvert = 15
 
         // when
-        val convertedNumber = findFooBarService.execute(numberToConvert)
+        val convertedNumber = divisibleConvertor.execute(numberToConvert)
 
         // then
         Assertions.assertEquals("FooBar", convertedNumber.toString())

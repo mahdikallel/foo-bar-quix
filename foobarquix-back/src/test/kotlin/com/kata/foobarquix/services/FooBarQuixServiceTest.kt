@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test
 
 class FooBarQuixServiceTest {
 
-    object findFooBarService : FindFooBarService() {
+    object divisibleConvertor : DivisibleConvertor() {
 
     }
 
-    private val fooBarQuixService: FooBarQuixService = FooBarQuixService(findFooBarService)
+    private val fooBarQuixService: FooBarQuixService = FooBarQuixService(divisibleConvertor)
 
     @Test
     fun should_return_foofoo_when_number_is_divisible_by_3_or_contain_3() {

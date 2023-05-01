@@ -5,7 +5,7 @@ import com.kata.foobarquix.services.constant.Constant.FOO
 import org.springframework.stereotype.Component
 
 @Component
-class FindFooBarService {
+class DivisibleConvertor {
 
     fun execute(inputNumber: Int): StringBuilder {
         val numberToConvert = StringBuilder()
