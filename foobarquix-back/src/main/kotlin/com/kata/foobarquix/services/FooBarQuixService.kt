@@ -1,44 +1,23 @@
 package com.kata.foobarquix.services
 
+import com.kata.foobarquix.services.constant.Constant.EMPTY_STRING
+import com.kata.foobarquix.services.constant.Constant.fooBarQuixMap
 import org.springframework.stereotype.Component
 
-private const val FOO = "Foo"
-private const val BAR = "Bar"
-private const val QUIX = "Quix"
-
-private const val THREE = "3"
-private const val FIVE = "5"
-private const val SEVEN = "7"
 
 @Component
-class FooBarQuixService {
+class FooBarQuixService(private val findFooBarService: FindFooBarService) {
 
     fun convertNumber(inputNumber: Int): String {
-        val numberToConvert = StringBuilder();
-
-        if (inputNumber % 3 == 0) {
-            numberToConvert.append(FOO);
-        }
-
-        if (inputNumber % 5 == 0) {
-            numberToConvert.append(BAR);
-        }
-
-
+        val numberToConvert = findFooBarService.execute(inputNumber)
         for (s in inputNumber.toString().iterator()) {
-            if (s.toString() == THREE) {
-                numberToConvert.append(FOO)
-            }
-            if (s.toString() == FIVE) {
-                numberToConvert.append(BAR)
-            }
-            if (s.toString() == SEVEN) {
-                numberToConvert.append(QUIX)
-            }
+            numberToConvert.append(convert(s))
         }
+        return if (numberToConvert.isEmpty()) inputNumber.toString() else numberToConvert.toString()
+    }
 
-        val result = numberToConvert.toString()
-        return if (result.isEmpty()) inputNumber.toString() else result;
+    private fun convert(s: Char): String {
+        return fooBarQuixMap.getOrDefault(s.toString(), EMPTY_STRING)
     }
 
 }
