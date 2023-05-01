@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-foo-bar-quix-form',
@@ -23,6 +23,7 @@ export class FooBarQuixFormComponent implements OnInit {
 
   submitNumber(): void {
     this.submitNumberOutput.emit(this.numberConvertorForm.get('numberToConvert').value);
+    this.numberConvertorForm.get('numberToConvert').reset();
   }
 
 }

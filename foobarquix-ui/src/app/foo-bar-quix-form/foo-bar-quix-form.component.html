@@ -17,11 +17,6 @@
 
     <div class="row">
       <div
-        *ngIf=" "
-        class="alert alert-danger ">
-      </div>
-
-      <div
         *ngIf="numberConvertorForm.get('numberToConvert').touched && numberConvertorForm.get('numberToConvert').invalid"
         class="alert alert-danger" role="alert">
 
@@ -35,7 +30,8 @@
     <div class="row">
       <button type="submit" class="btn btn-primary"
               [disabled]="numberConvertorForm.invalid"
-              (click)="submitNumber()">Convert</button>
+              (click)="submitNumber()">Convert
+      </button>
     </div>
   </form>
 </div>

@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {apiEndpoint} from './shared/enpoint';
-import {main} from '@angular/compiler-cli/src/main';
 import {map} from 'rxjs/operators';
 
 @Injectable({

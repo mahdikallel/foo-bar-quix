@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TestCase } from '../model/test-case';
+import {Component, OnInit} from '@angular/core';
+import {TestCase} from '../model/test-case';
 
 @Component({
   selector: 'app-back-end-instruction',
